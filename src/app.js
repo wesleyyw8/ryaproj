@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import Components from './components/components';
+import { HomeComponent } from './home/home.component';
 import {
   CheapFlightService,
   AirportsService
@@ -10,6 +11,7 @@ angular.module('myApp', [
   uiRouter,
   Components
 ])
+.component('homePage', HomeComponent)
 .service('AiportsService', AirportsService)
 .service('CheapFlightService', CheapFlightService)
 .config(($stateProvider) => {
@@ -17,6 +19,6 @@ angular.module('myApp', [
   $stateProvider
     .state('home', {
       url: '',
-      template: '<flight-page></flight-page>'
+      template: '<home-page></home-page>'
     });
 });
