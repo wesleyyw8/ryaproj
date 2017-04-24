@@ -95,6 +95,4 @@ Extra points will be given for unit testing all the functionality written.
 
 * Fork the project on gitlab
 * Do your magic
-* Create a merge request ( PR ) specifying in the title:
-  title: Name Surname eg: Fabrizio Fortunato
-  desc: Any comments about what implemented ( if any )
+* Send the test source to the HR contact
