@@ -95,4 +95,4 @@ Extra points will be given for unit testing all the functionality written.
 
 * Fork the project on gitlab
 * Do your magic
-* Send the test source to the HR contact
+* Share your fork with @fortunatof_ryanair ( Reporter access )
