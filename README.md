@@ -22,6 +22,7 @@ Linting::
 ## Tasks
 
 Build a small web app that will find the cheapest flights around Europe.
+Show us the best that you can do.
 The webapp needs to have at least the following components:
 
 ### Styling
@@ -39,6 +40,9 @@ Keep in mind that origin is different from destination but the component needs t
 be reusable for both scenarios.
 
 The component needs to be a custom select with autocomplete support.
+
+Keep in mind that departure will have only some routes defined not all the
+airports can reach other airports.
 
 #### Flight List
 
