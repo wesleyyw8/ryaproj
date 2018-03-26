@@ -99,4 +99,7 @@ Extra points will be given for unit testing all the functionality written.
 
 * Fork the project on gitlab
 * Do your magic
-* Share your fork with @fortunatof_ryanair ( Reporter access )
+* Share your fork with 
+
+    * @fortunatof_ryanair ( Reporter access )
+    * @sanchezjl ( Reporter access )
