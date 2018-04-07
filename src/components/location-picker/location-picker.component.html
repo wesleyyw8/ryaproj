@@ -1,0 +1,30 @@
+<div class="ct-location-picker">
+  <div class="ct-drop-down-container">
+    <input 
+      id="input-idd"
+      class="ct-input"
+      placeholder="placeholder"
+      ng-change="inputThrottle(value)"
+      ng-model="value"
+      ng-focus="onFocus($event)"
+      ng-blur="onBlur($event)"
+      ng-keyup="onKeyUp($event)"
+    />
+  </div>
+  <div class="ct-hint" ng-if="noResults">
+    No results found
+  </div>
+  <div 
+    class="ct-drop-down ct-min-width ct-max-height"
+    ng-show="dropdownVisible">
+      <ul>
+        <li ng-repeat="item in list"
+          id="item-parent-id"
+          class="ct-drop-down-option"
+          ng-mousedown="onClickLocationSelect($event, item)"
+        >
+          {{item.name}} 
+        </li>
+      </ul>
+  </div>
+</div>

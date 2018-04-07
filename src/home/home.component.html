@@ -19,6 +19,15 @@
 </nav>
   <section>
     <!-- TODO: Add your code here -->
+    <date-wrapper
+      start-date="$ctrl.startDate"
+      end-date="$ctrl.endDate">
+    </date-wrapper>
+
+    <location-picker
+      connector-ctrl="departureCtrl"
+    >  
+    </location-picker>
     <pre class="box">
 <strong>
   Tasks
@@ -108,9 +117,6 @@ between the two
 
 Extra points will be given for unit testing all the functionality written.
     </pre>
-    <date-wrapper
-      start-date="$ctrl.startDate"
-      end-date="$ctrl.endDate">
-    </date-wrapper>
+
   </section>
 </div>
