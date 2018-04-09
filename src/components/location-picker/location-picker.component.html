@@ -1,0 +1,14 @@
+<div class="location-picker__input-container">
+  <input type="text" class="location-picker__input" name="nametobedefined">
+  
+  <div 
+    class="location-picker__drop-down"
+    ng-show="dropdownVisible"
+  >
+    <ul>
+      <li ng-repeat="item in suggestions">
+        <span>{{item.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
