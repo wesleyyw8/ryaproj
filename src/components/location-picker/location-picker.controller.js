@@ -1,10 +1,6 @@
 export default function LocationPickerController($scope, $timeout) {
   'ngInject';
 
-  $timeout(() => {
-    console.log($scope.$ctrl.connectorCtrl);
-  }, 0);
-
   $scope.onKeyUp = (event) => {
     //console.log($scope.value);
   }
@@ -16,6 +12,20 @@ export default function LocationPickerController($scope, $timeout) {
 
   }
   $scope.inputThrottle = (value) => {
-    console.log(value);
+    $scope.$ctrl.connectorCtrl.setValue(value);
+    //console.log($scope.$ctrl.connectorCtrl.getSuggestions());
   }
+
+  $scope.onClickLocationSelect = (ev, item) => {
+    $scope.$ctrl.connectorCtrl.setValue(value);
+  }
+
+  $scope.$watch(() => {
+    return $scope.$ctrl.connectorCtrl.getSuggestions();
+  }, (newVal) => {
+    if (newVal) {
+      $scope.list = newVal;
+    }
+  })
+  $scope.dropdownVisible = true;
 };

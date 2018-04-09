@@ -15,12 +15,15 @@
     No results found
   </div>
   <div 
-    class="ct-drop-down ct-min-width ct-max-height"
+    class=""
     ng-show="dropdownVisible">
       <ul>
         <li ng-repeat="item in list"
           id="item-parent-id"
           class="ct-drop-down-option"
+          ng-style="{ 'background': (isHover ? '#ccc' : 'transparent') }" 
+          ng-mouseenter="isHover = true;" 
+          ng-mouseleave="isHover = false;"
           ng-mousedown="onClickLocationSelect($event, item)"
         >
           {{item.name}} 
