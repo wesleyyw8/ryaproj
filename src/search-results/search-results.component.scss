@@ -1,10 +1,53 @@
 .search-results {
-  display: block; 
   position: relative;
+  margin: auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-results__item {
-  width: 300px;
-  background-color: green;
+  width: 400px;
   height: 100px;
+  margin-bottom: 5px;
+  border: 1px solid #333;
+  background-color: white;
+  display: flex;
+  border-radius: 5px;
+}
+
+.search-results__info-container {
+  flex-grow: 3;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  img {
+    max-height: 50px;
+    max-width: 100px;
+  }
+}
+
+.search-results__price-container {
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #333;
+  text-align: center;
+}
+
+.search-results__button-select {
+  color: #073590;
+  background-color: #F1C933;
+  border-color: #F1C933;
+  padding: 2px 30px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    background-color: #ebbd10;
+  }
 }

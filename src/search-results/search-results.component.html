@@ -1,12 +1,25 @@
 <div class="search-results">
-  Search Results!
+  {{::params.departure}} to {{::params.arrival}}
+  <br>
   <div 
     class="search-results__item"
     ng-repeat="item in flightList"
   >
-    aawdawdawd
+    <div class="search-results__info-container">
+      <div>
+        <img src="http://4.bp.blogspot.com/-j35C6pNvkOA/VCNYP9QZmqI/AAAAAAAAE4U/Aozmfz0DqRM/s1600/Logo%2BRyanair.png">
+      </div>
+      <div>{{::params.departure}} to {{::params.arrival}}</div>
+      <div>{{formatHour(item.dateFrom)}} - {{formatHour(item.dateTo)}}</div>
+    </div>
+    <div class="search-results__price-container">
+      <div class="search-results__button-select">
+        <div>Price</div>
+        <div>{{::item.currency}} {{formatPrice(item.price)}}</div>
+      </div>
+    </div>
   </div>
-  <pre>
-    aa: {{$ctrl.flightList}}
-  </pre>
+  <div ng-if="flightList.length === 0">
+    No Results (maybe refresh the page!)
+  </div>
 </div>
