@@ -32,6 +32,7 @@ export default function HomeController($scope) {
     onSelect: value => {
       loadArrivalDataSearch(value.iataCode);
       $scope.$ctrl.departureData.value = value.name;
+      console.log('aaaa!');
     },
     value: '',
     onFocus: () => {},
@@ -43,9 +44,14 @@ export default function HomeController($scope) {
   }
 
   $scope.$ctrl.arrivalData = {
-    onSelect: () => {},
+    onSelect: value => {
+      $scope.$ctrl.arrivalData.value = value.name;
+      $scope.$ctrl.arrivalData.dropdownVisible = false;
+    },
     value: '',
-    onFocus: () => {},
+    onFocus: () => {
+      $scope.$ctrl.arrivalData.dropdownVisible = true;
+    },
     suggestions: [],
     dropdownVisible: false,
     onChange: value => {

@@ -22,15 +22,32 @@
       start-date="$ctrl.startDate"
       end-date="$ctrl.endDate">
     </date-wrapper>
-    <location-picker
-      data="$ctrl.departureData"
-    >
-    </location-picker>
-    <location-picker
-      data="$ctrl.arrivalData"
-    >
-    </location-picker>
-
-    <button ng-click="$ctrl.goSearch()">Search</button>
+    <div class="control is-horizontal">
+      <div class="control-label">
+        <label class="label">
+          Fly out:
+        </label>
+      </div>
+      <div class="control">
+        <location-picker
+          data="$ctrl.departureData"
+        >
+        </location-picker>
+      </div>
+      <div class="control-label">
+        <label class="label">
+          Fly out:
+        </label>
+      </div>
+      <div class="control">
+        <location-picker
+          data="$ctrl.arrivalData"
+        >
+        </location-picker>
+      </div>
+    </div>
+    <div class="home__go-search-container">
+      <button ng-click="$ctrl.goSearch()">Search</button>
+    </div>
   </section>
 </div>

@@ -1,14 +1,16 @@
 <div class="location-picker__input-container">
   <input 
     type="text" 
-    class="location-picker__input" 
+    class="input is-medium location-picker__input" 
     name="nametobedefined"
     ng-model="$ctrl.data.value"
+    ng-focus="$ctrl.data.dropdownVisible = true"
+    ng-blur="onBlur()"
     ng-change="$ctrl.data.onChange($ctrl.data.value)">
   
   <div 
     class="location-picker__drop-down"
-    ng-show="$ctrl.data.dropdownVisible"
+    ng-show="$ctrl.data.dropdownVisible && $ctrl.data.suggestions.length > 0"
   >
     <ul>
       <li 
