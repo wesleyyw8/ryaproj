@@ -1,6 +1,6 @@
 import { getAirports } from '../services/airports.service.js';
 
-export default function HomeController($scope) {
+export default function HomeController($scope, $location) {
   'ngInject';
 
   let flightData = {};
@@ -32,7 +32,6 @@ export default function HomeController($scope) {
     onSelect: value => {
       loadArrivalDataSearch(value.iataCode);
       $scope.$ctrl.departureData.value = value.name;
-      console.log('aaaa!');
     },
     value: '',
     onFocus: () => {},
@@ -40,7 +39,8 @@ export default function HomeController($scope) {
     dropdownVisible: true,
     onChange: value => {
       $scope.$ctrl.departureData.suggestions = filterSugestions(value);
-    }
+    },
+    placeholder: 'Enter departure airport...'
   }
 
   $scope.$ctrl.arrivalData = {
@@ -56,10 +56,16 @@ export default function HomeController($scope) {
     dropdownVisible: false,
     onChange: value => {
       filterArrivalList(value);
-    }
+    },
+    placeholder: 'Enter arrival airport...'
   }
 
   $scope.$ctrl.goSearch = () => {
-    console.log('go search!');
+    if ($scope.$ctrl.startDate &&
+      $scope.$ctrl.endDate &&
+      $scope.$ctrl.departureData.value &&
+      $scope.$ctrl.arrivalData.value) {
+      $location.path(`/search/${$scope.$ctrl.departureData.value}/${$scope.$ctrl.arrivalData.value}/${$scope.$ctrl.startDate}/${$scope.$ctrl.endDate}`);
+    }
   }
 }

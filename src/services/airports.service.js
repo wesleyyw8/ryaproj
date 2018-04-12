@@ -14,6 +14,3 @@ export const getAirports = () => {
   }
   return Promise.resolve(cachedData);
 };
-
-
-export const test = 'awd';
