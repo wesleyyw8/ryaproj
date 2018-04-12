@@ -27,10 +27,6 @@ angular.module('myApp', [
       url: '/search/{departure}/{arrival}/{dateDeparture}/{dateArrival}',
       template: '<search-results></search-results>'
     })
-    .state('test', {
-      url: '/test',
-      template: '<div>Test!!</div>'
-    })
     .state('notFound', {
       url: 'notFound',
       template: '<div>Page not found</div>'

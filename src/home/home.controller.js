@@ -1,4 +1,5 @@
-import { getAirports } from '../services/airports.service.js';
+import { getAirports } from 'Services/airports.service';
+import moment from 'moment';
 
 export default function HomeController($scope, $location) {
   'ngInject';
@@ -31,7 +32,7 @@ export default function HomeController($scope, $location) {
   $scope.$ctrl.departureData = {
     onSelect: value => {
       loadArrivalDataSearch(value.iataCode);
-      $scope.$ctrl.departureData.value = value.name;
+      $scope.$ctrl.departureData.selectedItem = value;
     },
     value: '',
     onFocus: () => {},
@@ -45,7 +46,7 @@ export default function HomeController($scope, $location) {
 
   $scope.$ctrl.arrivalData = {
     onSelect: value => {
-      $scope.$ctrl.arrivalData.value = value.name;
+      $scope.$ctrl.arrivalData.selectedItem = value;
       $scope.$ctrl.arrivalData.dropdownVisible = false;
     },
     value: '',
@@ -60,12 +61,15 @@ export default function HomeController($scope, $location) {
     placeholder: 'Enter arrival airport...'
   }
 
+  const formatDate = value => 
+    moment(value.toLocaleDateString(), 'DD/MM/YYYY').format('YYYY-MM-DD');
+
   $scope.$ctrl.goSearch = () => {
     if ($scope.$ctrl.startDate &&
       $scope.$ctrl.endDate &&
-      $scope.$ctrl.departureData.value &&
-      $scope.$ctrl.arrivalData.value) {
-      $location.path(`/search/${$scope.$ctrl.departureData.value}/${$scope.$ctrl.arrivalData.value}/${$scope.$ctrl.startDate}/${$scope.$ctrl.endDate}`);
+      $scope.$ctrl.departureData.selectedItem.iataCode &&
+      $scope.$ctrl.arrivalData.selectedItem.iataCode) {      
+        $location.path(`/search/${$scope.$ctrl.departureData.selectedItem.iataCode}/${$scope.$ctrl.arrivalData.selectedItem.iataCode}/${formatDate($scope.$ctrl.startDate)}/${formatDate($scope.$ctrl.endDate)}`);
     }
   }
 }
