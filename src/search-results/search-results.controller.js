@@ -25,6 +25,6 @@ export default function SearchResultsController($scope, $stateParams, $timeout, 
     Math.round(value).toFixed(2)
   
   $scope.goToPreviousPage = () => {
-    window.history.back();
+    window.history.back(); 
   }
 }
