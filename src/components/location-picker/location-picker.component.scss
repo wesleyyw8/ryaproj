@@ -1,0 +1,25 @@
+.location-picker__drop-down {
+  max-height: 150px;
+  overflow: scroll;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 6px 20px 12px rgba(0,0,0,0.15);
+  padding-top: 5px;
+  background-color: white;
+  color: #333;
+  ul {
+    top: 0;
+  }
+}
+
+.location-picker__input {
+  width: 206px;
+}
+
+.location-picker__drop-down li:hover {
+  background-color: #F1C933;
+  cursor: pointer;
+}

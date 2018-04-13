@@ -1,0 +1,22 @@
+section {
+  max-width: 900px;
+  margin-left: 10%;
+}
+
+.nav {
+  position: relative;
+  background: #073590;
+  height: 68px;
+  border-bottom: 2px solid #F1C933;
+  margin-bottom: 50px;
+}
+
+.input:focus {
+  border: 1px solid #333;
+}
+
+.home-component__btn-go-search {
+  position: absolute;
+  right: 0;
+  height: 40px;
+}

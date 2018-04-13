@@ -1,0 +1,23 @@
+<div class="location-picker__input-container">
+  <input 
+    type="text" 
+    class="input is-medium location-picker__input" 
+    placeholder="{{$ctrl.data.placeholder}}"
+    ng-model="$ctrl.data.selectedItem.name"
+    ng-focus="$ctrl.data.dropdownVisible = true"
+    ng-blur="onBlur()"
+    ng-change="$ctrl.data.onChange($ctrl.data.value)">
+  <div 
+    class="location-picker__drop-down"
+    ng-show="$ctrl.data.dropdownVisible && $ctrl.data.suggestions.length > 0"
+  >
+    <ul>
+      <li 
+        ng-repeat="item in $ctrl.data.suggestions"
+        ng-click="$ctrl.data.onSelect(item)"
+      >
+        <span>{{item.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
