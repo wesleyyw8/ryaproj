@@ -2,7 +2,7 @@ import { getCheapFlights } from 'Services/cheapflights.service';
 import { FLIGHTS_URL } from 'Enums';
 import moment from 'moment';
 
-export default function SearchResultsController($scope, $stateParams, $timeout) {
+export default function SearchResultsController($scope, $stateParams, $timeout, $location) {
   'ngInject';
   $scope.params = {
     arrival: $stateParams.arrival,
@@ -24,4 +24,7 @@ export default function SearchResultsController($scope, $stateParams, $timeout) 
   $scope.formatPrice = value =>
     Math.round(value).toFixed(2)
   
+  $scope.goToPreviousPage = () => {
+    window.history.back();
+  }
 }

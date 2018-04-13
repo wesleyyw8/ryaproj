@@ -1,5 +1,10 @@
 <div class="search-results">
-  {{::params.departure}} to {{::params.arrival}}
+  <div 
+    class="button-select"
+    ng-click="goToPreviousPage()"
+  >
+    Back
+  </div>
   <br>
   <div 
     class="search-results__item"
@@ -13,7 +18,7 @@
       <div>{{formatHour(item.dateFrom)}} - {{formatHour(item.dateTo)}}</div>
     </div>
     <div class="search-results__price-container">
-      <div class="search-results__button-select">
+      <div class="button-select">
         <div>Price</div>
         <div>{{::item.currency}} {{formatPrice(item.price)}}</div>
       </div>

@@ -2,7 +2,10 @@
 <nav class="nav">
   <div class="nav-left">
     <a class="nav-item is-brand" href="#">
-      CheapFlight
+      <img src="https://s3-eu-west-1.amazonaws.com/breakaway.ie/add_extra_magic/flights/ryanair-logo.png">
+    </a>
+    <a class="nav-item is-brand" href="#">
+      Wesley Rebelo
     </a>
   </div>
 
@@ -25,7 +28,7 @@
     <div class="control is-horizontal">
       <div class="control-label">
         <label class="label">
-          Fly out:
+          From:
         </label>
       </div>
       <div class="control">
@@ -36,7 +39,7 @@
       </div>
       <div class="control-label">
         <label class="label">
-          Fly out:
+          To:
         </label>
       </div>
       <div class="control">
@@ -45,9 +48,10 @@
         >
         </location-picker>
       </div>
-    </div>
-    <div class="home__go-search-container">
-      <button ng-click="$ctrl.goSearch()">Search</button>
+      <button 
+        ng-click="$ctrl.goSearch()"
+        class="home-component__btn-go-search button-select"
+      >Search</button>
     </div>
   </section>
 </div>

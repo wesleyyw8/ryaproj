@@ -7,6 +7,7 @@ import {
   CheapFlightService,
   AirportsService
 } from './services';
+import './scss/main.scss';
 
 angular.module('myApp', [
   uiRouter,
@@ -31,6 +32,5 @@ angular.module('myApp', [
       url: 'notFound',
       template: '<div>Page not found</div>'
     })
-    //http://localhost:3000/#!/search/123/123/123/123
   $urlRouterProvider.otherwise('/notFound');
 });
